@@ -75,9 +75,6 @@ class LinkedList {
   /** shift(): return & remove first item. */
 
   shift() {
-    // set head.next to head
-    // return prevHead
-
     let prevHead = this.head;
 
     if (this.length === 1){
@@ -85,7 +82,7 @@ class LinkedList {
       this.tail = null;
 
       this.length -= 1;
-      
+
       return prevHead;
     }
 
@@ -97,9 +94,24 @@ class LinkedList {
   }
 
   /** getAt(idx): get val at idx. */
-
+  // ERROR HANDLING //
   getAt(idx) {
+    
+    // if (idx > this.length || typeof idx !== "number"){
+    //   throw "invalid index";
+    // }
 
+    let current = this.head;
+    let count = 0;
+
+    while (current !== null){
+      if (count === idx){
+        return current.val;
+      }
+
+      count += 1;
+      current = current.next;
+    }
   }
 
   /** setAt(idx, val): set val at idx to val */
