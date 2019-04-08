@@ -54,7 +54,7 @@ class LinkedList {
       this.tail = null;
 
       this.length -= 1;
-      return current;
+      return current.val;
     }
 
     while (current !== null){
@@ -65,7 +65,7 @@ class LinkedList {
         current.next = null;
         this.length -= 1;
 
-        return prevTail;
+        return prevTail.val;
       }
 
       current = current.next;
