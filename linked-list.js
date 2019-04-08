@@ -117,7 +117,19 @@ class LinkedList {
   /** setAt(idx, val): set val at idx to val */
 
   setAt(idx, val) {
+    let current = this.head;
+    let count = 0;
 
+    if (this.length === 1 && idx === 0){
+      current.val = val
+      return undefined;
+    }
+
+    while (current !== null){
+      if (count+1 === idx){
+        current.next.val = val;
+      }
+    }
   }
 
   /** insertAt(idx, val): add node w/val before idx. */
