@@ -115,35 +115,55 @@ class LinkedList {
   }
 
   /** setAt(idx, val): set val at idx to val */
-
   setAt(idx, val) {
-    let newNode = new Node(val);
     let current = this.head;
     let count = 0;
 
-    if (idx === 0){
-      let nextNode = current.next;
-      this.head = newNode;
-      newNode.next = nextNode;
-    }
-
-    if (this.length === 1){
-      this.tail = newNode;
-      newNode.next = null;
+    if (this.length === 1 || idx === 0){
+      current.val = val
       return undefined;
     }
 
     while (current !== null){
       if (count+1 === idx){
-        let nextNode = current.next.next;
-
-        current.next = newNode;
-        current.next.next = nextNode;
-        return undefined;
+        current.next.val = val;
       }
-      current = current.next
+
+      current = current.next;
       count += 1;
     }
+  }
+
+  /** setAt(idx, val): set val at idx to val */
+
+  insertAt(idx, val) {
+    // let newNode = new Node(val);
+    // let current = this.head;
+    // let count = 0;
+
+    // if (idx === 0){
+    //   let nextNode = current.next;
+    //   this.head = newNode;
+    //   newNode.next = nextNode;
+    // }
+
+    // if (this.length === 1){
+    //   this.tail = newNode;
+    //   newNode.next = null;
+    //   return undefined;
+    // }
+
+    // while (current !== null){
+    //   if (count+1 === idx){
+    //     let nextNode = current.next.next;
+
+    //     current.next = newNode;
+    //     current.next.next = nextNode;
+    //     return undefined;
+    //   }
+    //   current = current.next
+    //   count += 1;
+    // }
   }
 
   /** removeAt(idx): return & remove item at idx, */
