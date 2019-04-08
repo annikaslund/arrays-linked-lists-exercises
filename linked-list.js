@@ -116,7 +116,7 @@ class LinkedList {
 
   /** setAt(idx, val): set val at idx to val */
 
-  insertAt(idx, val) {
+  setAt(idx, val) {
     let newNode = new Node(val);
     let current = this.head;
     let count = 0;
