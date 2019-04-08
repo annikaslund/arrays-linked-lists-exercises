@@ -116,32 +116,42 @@ class LinkedList {
 
   /** setAt(idx, val): set val at idx to val */
 
-  setAt(idx, val) {
+  insertAt(idx, val) {
+    let newNode = new Node(val);
     let current = this.head;
     let count = 0;
 
-    if (this.length === 1 && idx === 0){
-      current.val = val
+    if (idx === 0){
+      let nextNode = current.next;
+      this.head = newNode;
+      newNode.next = nextNode;
+    }
+
+    if (this.length === 1){
+      this.tail = newNode;
+      newNode.next = null;
       return undefined;
     }
 
     while (current !== null){
       if (count+1 === idx){
-        current.next.val = val;
+        let nextNode = current.next.next;
+
+        current.next = newNode;
+        current.next.next = nextNode;
+        return undefined;
       }
+      current = current.next
+      count += 1;
     }
-  }
-
-  /** insertAt(idx, val): add node w/val before idx. */
-
-  insertAt(idx, val) {
-
   }
 
   /** removeAt(idx): return & remove item at idx, */
 
   removeAt(idx) {
-
+    // traverse ll 
+    // if count+1 is same as idx
+      // 
   }
 
   /** average(): return an average of all values in the list */
