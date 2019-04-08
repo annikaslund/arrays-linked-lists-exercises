@@ -83,14 +83,14 @@ class LinkedList {
 
       this.length -= 1;
 
-      return prevHead;
+      return prevHead.val;
     }
 
     this.head = this.head.next;
 
     this.length -= 1;
 
-    return prevHead;
+    return prevHead.val;
   }
 
   /** getAt(idx): get val at idx. */
