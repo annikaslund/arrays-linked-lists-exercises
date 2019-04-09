@@ -134,36 +134,32 @@ class LinkedList {
     }
   }
 
-  /** setAt(idx, val): set val at idx to val */
+  /** insertAt(idx, val): add node w/val before idx. */
 
   insertAt(idx, val) {
-    // let newNode = new Node(val);
-    // let current = this.head;
-    // let count = 0;
+    let newNode = new Node(val);
+    let current = this.head;
+    let count = 0;
 
-    // if (idx === 0){
-    //   let nextNode = current.next;
-    //   this.head = newNode;
-    //   newNode.next = nextNode;
-    // }
+    if (idx === 0) return this.unshift(val);
 
-    // if (this.length === 1){
-    //   this.tail = newNode;
-    //   newNode.next = null;
-    //   return undefined;
-    // }
+    if (idx === this.length) return this.push(val);
 
-    // while (current !== null){
-    //   if (count+1 === idx){
-    //     let nextNode = current.next.next;
+    while (current !== null){
+      if ((count+1) === idx){
+        let nextNode = current.next
+        current.next = newNode
 
-    //     current.next = newNode;
-    //     current.next.next = nextNode;
-    //     return undefined;
-    //   }
-    //   current = current.next
-    //   count += 1;
-    // }
+        newNode.next = nextNode;
+
+        this.length += 1;
+
+        return undefined;
+      }
+
+      current = current.next
+      count += 1;
+    }
   }
 
   /** removeAt(idx): return & remove item at idx, */
