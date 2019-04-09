@@ -167,13 +167,43 @@ class LinkedList {
   removeAt(idx) {
     // traverse ll 
     // if count+1 is same as idx
-      // 
+    
+    let current = this.head;
+    let count = 0;
+
+    if (this.length === 1) return this.pop();
+
+    while (current !== null){
+      if (count+1 === idx){
+        let nextNode = current.next.next
+        current.next = nextNode;
+
+        this.length -= 1;
+      }
+
+      current = current.next;
+    }
   }
 
   /** average(): return an average of all values in the list */
 
   average() {
+    // traverse through each node
+    // add vals 
+    // divide by length
+
+    let current = this.head;
+    let total = 0;
     
+    if (this.length === 0) return total;
+
+    while (current !== null){
+      total += current.val;
+
+      current = current.next;
+    }
+
+    return total / this.length;
   }
 }
 
