@@ -188,13 +188,9 @@ class LinkedList {
   /** average(): return an average of all values in the list */
 
   average() {
-    // traverse through each node
-    // add vals 
-    // divide by length
-
     let current = this.head;
     let total = 0;
-    
+
     if (this.length === 0) return total;
 
     while (current !== null){
